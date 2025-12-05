@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kajnaja Brand · Tanzania's Ocean-Blue Identity House</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <style>
+        :root {
+            /* Dark Theme (Default) */
+            --bg-body: #000a14;
+            --bg-nav: rgba(255, 255, 255, 0.08);
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --bg-card-hover: rgba(255, 255, 255, 0.06);
+            --text-main: #fdfdfd;
+            --text-muted: rgba(255, 255, 255, 0.6);
+            --border: rgba(255, 255, 255, 0.1);
+            --accent: #2563eb;
+            --accent-glow: #3b82f6;
+            --nav-link-active-bg: #fff;
+            --nav-link-active-text: #000a14;
+            --gradient-overlay: linear-gradient(to top, #000a14, transparent 40%);
+            
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-full: 9999px;
+        }
+
+        /* Light Theme Override */
+        body.light-theme {
+            --bg-body: #f8fafc;
+            --bg-nav: rgba(255, 255, 255, 0.8);
+            --bg-card: #ffffff;
+            --bg-card-hover: #f1f5f9;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --accent: #0284c7;
+            --accent-glow: #0ea5e9;
+            --nav-link-active-bg: #0f172a;
+            --nav-link-active-text: #fff;
+            --gradient-overlay: linear-gradient(to top, #f8fafc, transparent 40%);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
+            min-height: 100vh;
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: var(--bg-body);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Background Pattern (Subtle) */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(37, 99, 235, 0.1), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(59, 130, 246, 0.1), transparent 25%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        main {
+            width: min(1400px, 92vw);
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* --- Navigation --- */
+        .nav-shell {
+            position: sticky;
+            top: 1.5rem;
+            width: min(1200px, 92vw);
+            margin: 1.5rem auto 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius-full);
+            background: var(--bg-nav);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding-left: 0.5rem;
+        }
+
+        .nav-logo img {
+            height: 32px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            background: rgba(0, 0, 0, 0.05);
+            padding: 0.3rem;
+            border-radius: var(--radius-full);
+            gap: 0.2rem;
+        }
+        
+        body.light-theme .nav-links {
+            background: rgba(0, 0, 0, 0.03);
+        }
+
+        .nav-links a {
+            padding: 0.5rem 1.2rem;
+            border-radius: var(--radius-full);
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        body.light-theme .nav-links a:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-links a.active {
+            background: var(--nav-link-active-bg);
+            color: var(--nav-link-active-text);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .theme-toggle {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s ease, background 0.2s ease;
+        }
+
+        .theme-toggle:hover {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        body.light-theme .theme-toggle:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-pill {
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .contact-pill:hover {
+            background: var(--accent-glow);
+            transform: translateY(-1px);
+        }
+
+        /* --- Typography & Layout --- */
+        .block {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: "Space Grotesk", sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            color: var(--text-main);
+        }
+
+        p {
+            color: var(--text-muted);
+        }
+
+        .section-heading {
+            margin-bottom: 4rem;
+        }
+
+        .section-heading p {
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            max-width: 900px;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 6rem;
+        }
+
+        .hero__content {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero__eyebrow {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 2rem;
+            color: var(--text-muted);
+        }
+
+        .hero h1 {
+            font-size: clamp(3.5rem, 8vw, 7rem);
+            line-height: 1;
+            margin-bottom: 2rem;
+        }
+
+        .hero p.lead {
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.5;
+        }
+
+        .hero__cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 4rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: var(--radius-full);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn--primary {
+            background: var(--text-main);
+            color: var(--bg-body);
+        }
+
+        .btn--primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn--ghost {
+            background: var(--bg-card);
+            border-color: var(--border);
+            color: var(--text-main);
+        }
+
+        .btn--ghost:hover {
+            background: var(--bg-card-hover);
+        }
+
+        .hero__visual {
+            width: 100%;
+            height: 60vh;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            position: relative;
+            margin-top: 2rem;
+        }
+
+        .hero__visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.05);
+            transition: transform 2s ease;
+        }
+
+        .hero:hover .hero__visual img {
+            transform: scale(1);
+        }
+
+        /* --- Intro Section --- */
+        .intro {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 2rem;
+        }
+
+        .intro__card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .intro__card h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .intro__card p {
+            font-size: 1.1rem;
+        }
+
+        /* --- Trusted Clients (Logos) --- */
+        .clients-section {
+            padding: 4rem 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 4rem;
+        }
+        
+        .clients-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+        }
+
+        .clients-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .clients-grid img {
+            height: 40px;
+            width: auto;
+            opacity: 0.5;
+            filter: grayscale(100%);
+            transition: all 0.3s ease;
+        }
+
+        .clients-grid img:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+        }
+
+        /* --- Services --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 3rem;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            background: var(--bg-card-hover);
+        }
+
+        .service-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            margin-bottom: 2rem;
+        }
+
+        .service-card ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .service-card li {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: var(--radius-full);
+            background: rgba(125, 125, 125, 0.1);
+            color: var(--text-muted);
+        }
+
+        /* --- Testimonials --- */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 2.5rem;
+        }
+
+        .testimonial-quote {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .author-info h4 {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* --- Featured Work --- */
+        .featured {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .featured__image {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .featured__content h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .featured__content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* --- Portfolio Grid --- */
+        .portfolio-filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 0.6rem 1.5rem;
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--text-main);
+            color: var(--bg-body);
+            border-color: var(--text-main);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            position: relative;
+            background: var(--bg-card);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .portfolio-overlay h3 {
+            color: #fff; /* Always white on overlay */
+        }
+        
+        .portfolio-overlay p {
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* --- Contact --- */
+        .contact-section {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 4rem;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+        }
+
+        .form-control {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: var(--radius-sm);
+            color: var(--text-main);
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+        
+        body.light-theme .form-control {
+            background: #fff;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        /* --- Footer --- */
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 4rem 0;
+            margin-top: 4rem;
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        /* --- Animations --- */
+        [data-animate] {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        [data-animate].is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .nav-shell {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                width: 100%;
+                justify-content: center;
+                overflow-x: auto;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .intro, .featured, .contact-section {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="nav-shell" data-animate>
+        <a class="nav-logo" href="#home">
+            <img src="assets/images/kajanja brand logo-01.png" alt="Kajnaja Brand">
+        </a>
+        <nav class="nav-links">
+            <a href="#home" class="active">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#portfolio">Work</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                <!-- Sun Icon -->
+                <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <!-- Moon Icon -->
+                <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+            <button class="contact-pill" data-scroll="#contact">Start a project</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero block">
+            <div class="hero__content" data-animate>
+                <span class="hero__eyebrow">Tanzania's Premier Identity House</span>
+                <h1>
+                    Brands that feel<br>
+                    inevitable.
+                </h1>
+                <p class="lead">
+                    We blend anthropological insight with couture craft to deliver white-glove identities for luxury, hospitality, and innovation leaders.
+                </p>
+                <div class="hero__cta">
+                    <button class="btn btn--primary" data-scroll="#contact">Book Discovery</button>
+                    <button class="btn btn--ghost">View Credentials</button>
+                </div>
+            </div>
+            
+            <div class="hero__visual" data-animate style="transition-delay: 0.2s;">
+                <img src="assets/images/home_page.jpeg" alt="Kajnaja Brand Atmosphere">
+                <div style="position: absolute; inset: 0; background: var(--gradient-overlay);"></div>
+            </div>
+        </section>
+
+        <section class="intro block" data-animate>
+            <div class="intro">
+                <div class="intro__card">
+                    <h2>Branding agency of record for Tanzania's visionary founders.</h2>
+                    <p>
+                        We orchestrate white and ocean-blue systems that feel like air: present, essential, never loud. From Dar es Salaam to
+                        Zanzibar, we choreograph every touchpoint — interior scents, sonic cues, uniforms, digital platforms, and earned media playbooks.
+                    </p>
+                </div>
+                <div class="intro__card" style="justify-content: center; text-align: center;">
+                    <h3 style="font-size: 2rem; color: var(--accent);">94%</h3>
+                    <p>Client Retention Rate</p>
+                    <div style="margin-top: 2rem; height: 1px; background: var(--border);"></div>
+                    <h3 style="font-size: 2rem; color: var(--accent); margin-top: 2rem;">60+</h3>
+                    <p>Regional Launches</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trusted Clients Section -->
+        <section class="clients-section" data-animate>
+            <p class="clients-header">Trusted by Visionary Founders</p>
+            <div class="clients-grid">
+                <!-- Placeholder Logos (using text for now, replace with SVGs/Images) -->
+                <img src="assets/images/kajanja%20brand%20logo-01.png" alt="Client 1">
+                <img src="assets/images/kajanja%20brand%20logo-02.png" alt="Client 2">
+                <img src="assets/images/re.svg" alt="Client 3">
+                <img src="assets/images/kajanja%20brand%20logo-01.png" alt="Client 4">
+                <img src="assets/images/kajanja%20brand%20logo-02.png" alt="Client 5">
+            </div>
+        </section>
+
+        <section id="services" class="block" data-animate>
+            <div class="section-heading">
+                <p>Our Expertise</p>
+                <h2>Three studios, one seamless brand experience.</h2>
+            </div>
+            <div class="services-grid">
+                <article class="service-card">
+                    <h3>Brand Strategy Lab</h3>
+                    <p>Immersive workshops, cultural tension maps, and future-proof positioning statements.</p>
+                    <ul>
+                        <li>Identity</li>
+                        <li>Strategy</li>
+                        <li>Guidelines</li>
+                    </ul>
+                </article>
+                <article class="service-card">
+                    <h3>Experience Atelier</h3>
+                    <p>Graphic systems, sonic cues, motion rules, editorial design, and tactile packaging cues.</p>
+                    <ul>
+                        <li>Visual</li>
+                        <li>Motion</li>
+                        <li>Packaging</li>
+                    </ul>
+                </article>
+                <article class="service-card">
+                    <h3>Digital Calm Studio</h3>
+                    <p>UI/UX, microsites, product films, and social ecosystems that mirror the physical brand.</p>
+                    <ul>
+                        <li>Web Design</li>
+                        <li>UI/UX</li>
+                        <li>Social</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="block" data-animate>
+            <div class="section-heading">
+                <p>Social Proof</p>
+                <h2>What our partners say.</h2>
+            </div>
+            <div class="testimonials-grid">
+                <article class="testimonial-card">
+                    <p class="testimonial-quote">"Kajnaja Brand didn't just design a logo; they codified our entire cultural DNA into a visual language."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">S</div>
+                        <div class="author-info">
+                            <h4>Sarah M.</h4>
+                            <span>CEO, Serengeti Reserve</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="testimonial-card">
+                    <p class="testimonial-quote">"The level of precision and 'calm' they brought to our chaotic launch was exactly what we needed."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">J</div>
+                        <div class="author-info">
+                            <h4>Juma K.</h4>
+                            <span>Founder, Swahili Tech</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="testimonial-card">
+                    <p class="testimonial-quote">"World-class aesthetics with deep local roots. The best agency experience we've had in East Africa."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">L</div>
+                        <div class="author-info">
+                            <h4>Lina T.</h4>
+                            <span>Director, Zanzibar Tide</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="featured block" data-animate>
+            <div class="featured__content">
+                <div class="section-heading">
+                    <p>Featured Case Study</p>
+                    <h2>Serengeti Reserve</h2>
+                </div>
+                <p>
+                    A flagship hospitality identity that slips from sunrise safaris to moonlit degustation dinners. We layered
+                    ocean gradients, reflective chrome typography, and bespoke Kiswahili poetry to create a sonic + visual arc.
+                </p>
+                <button class="btn btn--primary">View Case Study</button>
+            </div>
+            <div class="featured__image">
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80" alt="Serengeti Reserve interior">
+            </div>
+        </section>
+
+        <section id="portfolio" class="block" data-animate>
+            <div class="section-heading">
+                <p>Selected Works</p>
+                <h2>Curated Portfolio</h2>
+            </div>
+            
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="hospitality">Hospitality</button>
+                <button class="filter-btn" data-filter="tech">Tech</button>
+                <button class="filter-btn" data-filter="luxury">Luxury</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <article class="portfolio-item" data-category="hospitality">
+                    <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80" alt="Boutique hotel">
+                    <div class="portfolio-overlay">
+                        <h3>Nyika Atelier</h3>
+                        <p>Fragrance brand launch</p>
+                    </div>
+                </article>
+                <article class="portfolio-item" data-category="tech">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80" alt="Tech studio">
+                    <div class="portfolio-overlay">
+                        <h3>Swahili Tech Week</h3>
+                        <p>Digital Conference Identity</p>
+                    </div>
+                </article>
+                <article class="portfolio-item" data-category="luxury">
+                    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80" alt="Luxury portrait">
+                    <div class="portfolio-overlay">
+                        <h3>Kilimanjaro Aerie</h3>
+                        <p>Luxury Hospitality</p>
+                    </div>
+                </article>
+                <article class="portfolio-item" data-category="hospitality">
+                    <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=80" alt="Resort">
+                    <div class="portfolio-overlay">
+                        <h3>Zanzibar Tide Club</h3>
+                        <p>Members Club</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="about" class="block" data-animate>
+            <div class="section-heading">
+                <p>About Us</p>
+                <h2>Values anchored in Tanzania.</h2>
+            </div>
+            <div class="services-grid">
+                 <article class="service-card">
+                    <h3>Mission</h3>
+                    <p>To craft calm, luxurious African brands that scale without losing their soul.</p>
+                </article>
+                <article class="service-card">
+                    <h3>Vision</h3>
+                    <p>To become the blueprint for ocean-blue elegance across the continent.</p>
+                </article>
+                <article class="service-card">
+                    <h3>Values</h3>
+                    <p>Precision over pace. Context before concept. People-first collaboration.</p>
+                </article>
+            </div>
+            
+            <div style="margin-top: 4rem;">
+                <h3 style="margin-bottom: 2rem;">Our Process</h3>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <span style="font-size: 3rem; color: var(--accent); opacity: 0.5;">01</span>
+                        <h4>Immersion</h4>
+                        <p>Sensory workshops & research.</p>
+                    </div>
+                    <div class="service-card">
+                        <span style="font-size: 3rem; color: var(--accent); opacity: 0.5;">02</span>
+                        <h4>Strategy</h4>
+                        <p>Positioning & blueprint.</p>
+                    </div>
+                     <div class="service-card">
+                        <span style="font-size: 3rem; color: var(--accent); opacity: 0.5;">03</span>
+                        <h4>Design</h4>
+                        <p>Visual & sonic systems.</p>
+                    </div>
+                     <div class="service-card">
+                        <span style="font-size: 3rem; color: var(--accent); opacity: 0.5;">04</span>
+                        <h4>Continuity</h4>
+                        <p>Launch & iteration.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="block" data-animate>
+            <div class="contact-section">
+                <div class="contact-info">
+                    <p style="color: var(--accent); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.1em;">Get in Touch</p>
+                    <h3>Ready for the calm launch?</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">
+                        Request the Kajnaja Prelude Deck within 24 hours.
+                    </p>
+                    <div style="margin-bottom: 2rem;">
+                        <p style="color: var(--text-main); font-size: 1.2rem;">+255 754 222 111</p>
+                        <p style="color: var(--text-muted);">atelier@kajnaja.com</p>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Masaki, Dar es Salaam · Tanzania</p>
+                    
+                    <!-- Optional Map Placeholder -->
+                    <div style="margin-top: 2rem; border-radius: var(--radius-md); overflow: hidden; height: 200px; background: var(--bg-card);">
+                         <iframe title="Kajnaja Brand Map" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.761535669138!2d39.27237667598536!3d-6.747043467868306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4c737d1dc9b7%3A0xdf1a93926ab9dd98!2sMasaki%2C%20Dar%20es%20Salaam%2C%20Tanzania!5e0!3m2!1sen!2sus!4v1700000000000" style="width: 100%; height: 100%; border: 0;"></iframe>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" class="form-control" placeholder="Najma">
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" class="form-control" placeholder="Kajanja">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-control" placeholder="you@brand.co">
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea class="form-control" rows="4" placeholder="Tell us about your project..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn--primary" style="width: 100%;">Send Request</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#portfolio">Work</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div style="margin-bottom: 2rem; display: flex; justify-content: center; gap: 1.5rem;">
+            <a href="#">Instagram</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Behance</a>
+        </div>
+        <p>© 2025 Kajnaja Brand Studio · Tanzania's Elite Branding Agency</p>
+    </footer>
+
+    <script>
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('themeToggle');
+        const iconSun = document.querySelector('.icon-sun');
+        const iconMoon = document.querySelector('.icon-moon');
+        
+        // Check local storage or system preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.body.classList.add('light-theme');
+            iconSun.style.display = 'block';
+            iconMoon.style.display = 'none';
+        } else {
+            iconSun.style.display = 'none';
+            iconMoon.style.display = 'block';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+            const isLight = document.body.classList.contains('light-theme');
+            
+            if (isLight) {
+                iconSun.style.display = 'block';
+                iconMoon.style.display = 'none';
+                localStorage.setItem('theme', 'light');
+            } else {
+                iconSun.style.display = 'none';
+                iconMoon.style.display = 'block';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Animation Observer
+        const animatedBlocks = document.querySelectorAll('[data-animate]');
+        const observer = new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            },
+            { threshold: 0.15 }
+        );
+        animatedBlocks.forEach(block => observer.observe(block));
+
+        // Smooth Scroll
+        document.querySelectorAll('[data-scroll]').forEach(trigger => {
+            trigger.addEventListener('click', event => {
+                const target = document.querySelector(trigger.dataset.scroll);
+                if (target) {
+                    event.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Portfolio Filters
+        const filterButtons = document.querySelectorAll('[data-filter]');
+        const portfolioCards = document.querySelectorAll('[data-category]');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                const filter = button.dataset.filter;
+
+                portfolioCards.forEach(card => {
+                    const matches = filter === 'all' || card.dataset.category === filter;
+                    card.style.display = matches ? 'block' : 'none';
+                });
+            });
+        });
+
+        // Nav Active State (ScrollSpy)
+        const sections = document.querySelectorAll('section[id]');
+        window.addEventListener('scroll', () => {
+            const scrollY = window.pageYOffset;
+            sections.forEach(current => {
+                const sectionHeight = current.offsetHeight;
+                const sectionTop = current.offsetTop - 100;
+                const sectionId = current.getAttribute('id');
+                
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    const activeLink = document.querySelector('.nav-links a[href*=' + sectionId + ']');
+                    if (activeLink) {
+                        document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active'));
+                        activeLink.classList.add('active');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kajnaja Brand · Journal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="blue" data-page="blog">
+    <div class="nav-overlay" data-nav-overlay></div>
+    <nav class="nav-drawer" data-nav-drawer>
+        <button class="nav-drawer__close" data-nav-close aria-label="Close menu">×</button>
+        <a class="nav-drawer__link" href="index.html">Home</a>
+        <a class="nav-drawer__link" href="services.html">Services</a>
+        <a class="nav-drawer__link" href="about.html">About</a>
+        <a class="nav-drawer__link" href="work.html">Work</a>
+        <a class="nav-drawer__link" href="contact.html">Contact</a>
+        <a class="nav-drawer__link is-active" href="blog.html">Blog</a>
+        <a class="nav-drawer__cta" href="contact.html">Start a project</a>
+        <button class="theme-toggle theme-toggle--drawer" type="button" data-theme-toggle aria-pressed="false"
+            aria-label="Switch to white theme">
+            <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5" />
+                    <line x1="12" y1="2" x2="12" y2="4.5" />
+                    <line x1="12" y1="19.5" x2="12" y2="22" />
+                    <line x1="4.22" y1="4.22" x2="5.9" y2="5.9" />
+                    <line x1="18.1" y1="18.1" x2="19.78" y2="19.78" />
+                    <line x1="2" y1="12" x2="4.5" y2="12" />
+                    <line x1="19.5" y1="12" x2="22" y2="12" />
+                    <line x1="4.22" y1="19.78" x2="5.9" y2="18.1" />
+                    <line x1="18.1" y1="5.9" x2="19.78" y2="4.22" />
+                </svg>
+            </span>
+            <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15.5A9 9 0 0 1 8.5 3 7.5 7.5 0 1 0 21 15.5z" />
+                </svg>
+            </span>
+        </button>
+    </nav>
+
+    <header class="nav-shell" data-animate>
+        <a class="nav-logo" href="index.html">
+            <img class="nav-logo__white" src="assets/images/kajanja brand logo-01.png" alt="Kajnaja Brand">
+            <img class="nav-logo__blue" src="assets/images/kajanja brand logo-02.png" alt="Kajnaja Brand">
+        </a>
+        <div class="nav-bar">
+            <div class="nav-bar__inner">
+                <div class="nav-tabs" role="tablist">
+                    <a class="nav-tab" href="index.html" data-nav="home" role="tab">Home</a>
+                    <a class="nav-tab" href="services.html" data-nav="services" role="tab">Services</a>
+                    <a class="nav-tab" href="about.html" data-nav="about" role="tab">About</a>
+                    <a class="nav-tab" href="work.html" data-nav="work" role="tab">Work</a>
+                    <a class="nav-tab" href="contact.html" data-nav="contact" role="tab">Contact</a>
+                    <a class="nav-tab" href="blog.html" data-nav="blog" role="tab">Blog</a>
+                </div>
+            </div>
+        </div>
+        <div class="nav-actions">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false"
+                aria-label="Switch to white theme">
+                <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5" />
+                        <line x1="12" y1="2" x2="12" y2="4.5" />
+                        <line x1="12" y1="19.5" x2="12" y2="22" />
+                        <line x1="4.22" y1="4.22" x2="5.9" y2="5.9" />
+                        <line x1="18.1" y1="18.1" x2="19.78" y2="19.78" />
+                        <line x1="2" y1="12" x2="4.5" y2="12" />
+                        <line x1="19.5" y1="12" x2="22" y2="12" />
+                        <line x1="4.22" y1="19.78" x2="5.9" y2="18.1" />
+                        <line x1="18.1" y1="5.9" x2="19.78" y2="4.22" />
+                    </svg>
+                </span>
+                <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15.5A9 9 0 0 1 8.5 3 7.5 7.5 0 1 0 21 15.5z" />
+                    </svg>
+                </span>
+            </button>
+            <a class="contact-pill" href="contact.html">Start a project</a>
+        </div>
+        <button class="nav-hamburger" data-nav-toggle aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <main>
+        <section class="page-hero block" data-animate>
+            <div class="hero__content">
+                <p class="hero__eyebrow">Field Notes</p>
+                <h1>The Kajnaja Journal.</h1>
+                <p>Stories from immersion salons, continuity labs, and the partners who keep brands breathing gently.</p>
+            </div>
+            <div class="page-hero__media">
+                <img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?auto=format&fit=crop&w=1100&q=80" alt="Creative board">
+            </div>
+        </section>
+
+        <section class="page-section" data-animate>
+            <div class="section-heading">
+                <p>Latest Dispatches</p>
+                <h2>Tuned observations from the studio floor.</h2>
+            </div>
+            <div class="blog-grid">
+                <article>
+                    <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=900&q=80" alt="Sketching">
+                    <p class="home-blog-teaser__meta">Calm Systems · 8 min read</p>
+                    <h3>Embedding scent, sound, and typography inside premium hospitality.</h3>
+                    <a href="blog-detail.html">Read article →</a>
+                </article>
+                <article>
+                    <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80" alt="Boutique retail">
+                    <p class="home-blog-teaser__meta">Retail Rituals · 6 min read</p>
+                    <h3>Designing retail inserts that feel like heirlooms.</h3>
+                    <a href="blog-detail.html">Read article →</a>
+                </article>
+                <article>
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80" alt="Tech team">
+                    <p class="home-blog-teaser__meta">Digital Calm · 5 min read</p>
+                    <h3>Turning dense product onboarding into poetic interactions.</h3>
+                    <a href="blog-detail.html">Read article →</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="cta block" data-animate>
+            <div>
+                <p>Newsletter</p>
+                <h2>Receive quarterly field notes and invite-only salon recaps.</h2>
+            </div>
+            <a class="contact-pill contact-pill--dark" href="mailto:journal@kajnaja.com">Join the list</a>
+        </section>
+    </main>
+
+    <footer class="footer" data-animate>
+        <div class="footer__brand">
+            <img src="assets/images/logo.png" alt="Kajnaja Brand mark">
+            <p>Kajnaja Brand · Tanzania's Elite Branding Agency</p>
+        </div>
+        <div class="footer__links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="work.html">Work</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer__social">
+            <a href="https://www.instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+            <a href="https://www.behance.net" target="_blank" rel="noreferrer">Behance</a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+        <div class="footer__legal">
+            <span>© 2025 Kajnaja Brand Studio</span>
+            <span>Privacy · Terms</span>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kajnaja Brand · Tanzania's Ocean-Blue Identity House</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="blue" data-page="home">
+    <div class="nav-overlay" data-nav-overlay></div>
+    <nav class="nav-drawer" data-nav-drawer>
+        <button class="nav-drawer__close" data-nav-close aria-label="Close menu">×</button>
+        <a class="nav-drawer__link is-active" href="index.html">Home</a>
+        <a class="nav-drawer__link" href="services.html">Services</a>
+        <a class="nav-drawer__link" href="about.html">About</a>
+        <a class="nav-drawer__link" href="work.html">Work</a>
+        <a class="nav-drawer__link" href="contact.html">Contact</a>
+        <a class="nav-drawer__link" href="blog.html">Blog</a>
+        <a class="nav-drawer__cta" href="contact.html">Start a project</a>
+        <button class="theme-toggle theme-toggle--drawer" type="button" data-theme-toggle aria-pressed="false"
+            aria-label="Switch to white theme">
+            <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5" />
+                    <line x1="12" y1="2" x2="12" y2="4.5" />
+                    <line x1="12" y1="19.5" x2="12" y2="22" />
+                    <line x1="4.22" y1="4.22" x2="5.9" y2="5.9" />
+                    <line x1="18.1" y1="18.1" x2="19.78" y2="19.78" />
+                    <line x1="2" y1="12" x2="4.5" y2="12" />
+                    <line x1="19.5" y1="12" x2="22" y2="12" />
+                    <line x1="4.22" y1="19.78" x2="5.9" y2="18.1" />
+                    <line x1="18.1" y1="5.9" x2="19.78" y2="4.22" />
+                </svg>
+            </span>
+            <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15.5A9 9 0 0 1 8.5 3 7.5 7.5 0 1 0 21 15.5z" />
+                </svg>
+            </span>
+        </button>
+    </nav>
+
+    <header class="nav-shell" data-animate>
+        <a class="nav-logo" href="index.html">
+            <img class="nav-logo__white" src="assets/images/kajanja brand logo-01.png" alt="Kajnaja Brand">
+            <img class="nav-logo__blue" src="assets/images/kajanja brand logo-02.png" alt="Kajnaja Brand">
+        </a>
+        <div class="nav-bar">
+            <div class="nav-bar__inner">
+                <div class="nav-tabs" role="tablist">
+                    <a class="nav-tab" href="index.html" data-nav="home" role="tab">Home</a>
+                    <a class="nav-tab" href="services.html" data-nav="services" role="tab">Services</a>
+                    <a class="nav-tab" href="about.html" data-nav="about" role="tab">About</a>
+                    <a class="nav-tab" href="work.html" data-nav="work" role="tab">Work</a>
+                    <a class="nav-tab" href="contact.html" data-nav="contact" role="tab">Contact</a>
+                    <a class="nav-tab" href="blog.html" data-nav="blog" role="tab">Blog</a>
+                </div>
+            </div>
+        </div>
+        <div class="nav-actions">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false"
+                aria-label="Switch to white theme">
+                <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5" />
+                        <line x1="12" y1="2" x2="12" y2="4.5" />
+                        <line x1="12" y1="19.5" x2="12" y2="22" />
+                        <line x1="4.22" y1="4.22" x2="5.9" y2="5.9" />
+                        <line x1="18.1" y1="18.1" x2="19.78" y2="19.78" />
+                        <line x1="2" y1="12" x2="4.5" y2="12" />
+                        <line x1="19.5" y1="12" x2="22" y2="12" />
+                        <line x1="4.22" y1="19.78" x2="5.9" y2="18.1" />
+                        <line x1="18.1" y1="5.9" x2="19.78" y2="4.22" />
+                    </svg>
+                </span>
+                <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15.5A9 9 0 0 1 8.5 3 7.5 7.5 0 1 0 21 15.5z" />
+                    </svg>
+                </span>
+            </button>
+            <a class="contact-pill" href="contact.html">Start a project</a>
+        </div>
+        <button class="nav-hamburger" data-nav-toggle aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <main>
+        <section class="hero block" data-animate>
+            <div class="hero__content">
+                <p class="hero__eyebrow">Ocean-blue calm · Tanzania's most awarded branding agency</p>
+                <h1>
+                    We design brands that feel inevitable.
+                    <span>Elegance, professionalism, and simplicity in one breath.</span>
+                </h1>
+                <p>
+                    Kajnaja Brand blends anthropological insight with couture craft to deliver white-glove identities for leading
+                    Tanzanian luxury, hospitality, and innovation houses. Each rollout is curated, immersive, and relentlessly consistent.
+                </p>
+                <div class="hero__cta">
+                    <a class="btn btn--primary" href="contact.html">Book a discovery call</a>
+                    <a class="btn btn--ghost" href="services.html">Explore capabilities</a>
+                </div>
+                <div class="hero__stats">
+                    <article>
+                        <h3>60+</h3>
+                        <p>regional launches crafted in the last 24 months.</p>
+                    </article>
+                    <article>
+                        <h3>6-week</h3>
+                        <p>average timeline from immersion to market entry.</p>
+                    </article>
+                    <article>
+                        <h3>94%</h3>
+                        <p>clients reinvest in year-two retainers.</p>
+                    </article>
+                </div>
+            </div>
+            <div class="hero__media">
+                <img src="assets/images/home_page.jpeg" alt="Kajnaja Brand moodboard">
+            </div>
+        </section>
+
+        <section class="intro block" data-animate>
+            <div class="intro__overview">
+                <p>Home · Intro/About</p>
+                <h2>Branding agency of record for Tanzania's visionary founders.</h2>
+                <p>
+                    We orchestrate white and ocean-blue systems that feel like air: present, essential, never loud. From Dar es Salaam to
+                    Zanzibar, we choreograph every touchpoint — interior scents, sonic cues, uniforms, digital platforms, and earned media playbooks.
+                </p>
+            </div>
+            <div class="intro__signature">
+                <h3>Signature Intel</h3>
+                <ul>
+                    <li>Embedded cultural research pods stationed in Arusha, Dar, and Stone Town.</li>
+                    <li>Dedicated "Calm Room" review ritual for each brand milestone.</li>
+                    <li>Bespoke ocean-blue master palette with adaptive temperature shifts.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="trusted-by block" data-animate>
+            <div class="section-heading section-heading--centered">
+                <p>Trusted by visionary founders</p>
+            </div>
+            <div class="logo-carousel">
+                <div class="logo-carousel__track">
+                    <img src="assets/images/kajanja brand logo-01.png" alt="Client 1">
+                    <img src="assets/images/kajanja brand logo-02.png" alt="Client 2">
+                    <img src="assets/images/re.svg" alt="Client 3">
+                    <img src="assets/images/kajanja brand logo-01.png" alt="Client 4">
+                    <img src="assets/images/kajanja brand logo-02.png" alt="Client 5">
+                    <img src="assets/images/re.svg" alt="Client 6">
+                    <!-- Duplicate for seamless loop -->
+                    <img src="assets/images/kajanja brand logo-01.png" alt="Client 1">
+                    <img src="assets/images/kajanja brand logo-02.png" alt="Client 2">
+                    <img src="assets/images/re.svg" alt="Client 3">
+                    <img src="assets/images/kajanja brand logo-01.png" alt="Client 4">
+                    <img src="assets/images/kajanja brand logo-02.png" alt="Client 5">
+                    <img src="assets/images/re.svg" alt="Client 6">
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials block" data-animate>
+            <div class="section-heading section-heading--centered">
+                <p>What Clients Say</p>
+                <h2>Voices from our partners.</h2>
+            </div>
+            <div class="testimonial-carousel" data-testimonial-carousel>
+                <div class="testimonial-carousel__track" data-testimonial-track>
+                    <article class="testimonial-card">
+                        <p class="testimonial-card__quote">Kajnaja transformed our vision into a brand that resonates deeply with our audience. Their attention to detail and cultural insight is unmatched in East Africa.</p>
+                        <div class="testimonial-card__author">
+                            <img class="testimonial-card__avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="John M.">
+                            <div>
+                                <p class="testimonial-card__name">John Mwangi</p>
+                                <p class="testimonial-card__role">CEO, Serengeti Reserve</p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="testimonial-card">
+                        <p class="testimonial-card__quote">Working with Kajnaja felt like having an in-house creative team that truly understood our heritage and aspirations. The result exceeded every expectation.</p>
+                        <div class="testimonial-card__author">
+                            <img class="testimonial-card__avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="Sarah A.">
+                            <div>
+                                <p class="testimonial-card__name">Sarah Amani</p>
+                                <p class="testimonial-card__role">Founder, Zanzibar Tide Club</p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="testimonial-card">
+                        <p class="testimonial-card__quote">The level of craft and strategic thinking Kajnaja brought to our rebrand was extraordinary. They don't just design—they architect experiences.</p>
+                        <div class="testimonial-card__author">
+                            <img class="testimonial-card__avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&q=80" alt="David K.">
+                            <div>
+                                <p class="testimonial-card__name">David Kimani</p>
+                                <p class="testimonial-card__role">Director, Kilimanjaro Aerie</p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="testimonial-card">
+                        <p class="testimonial-card__quote">From strategy to execution, Kajnaja delivered a brand identity that captures our essence perfectly. Their process is as refined as their output.</p>
+                        <div class="testimonial-card__author">
+                            <img class="testimonial-card__avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80" alt="Grace N.">
+                            <div>
+                                <p class="testimonial-card__name">Grace Nyamweru</p>
+                                <p class="testimonial-card__role">CMO, Swahili Tech Week</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="testimonial-carousel__arrows">
+                    <button class="testimonial-carousel__arrow" data-testimonial-prev aria-label="Previous testimonial">←</button>
+                    <button class="testimonial-carousel__arrow" data-testimonial-next aria-label="Next testimonial">→</button>
+                </div>
+                <div class="testimonial-carousel__nav" data-testimonial-dots></div>
+            </div>
+        </section>
+        <section class="home-preview block" data-animate>
+            <div class="section-heading">
+                <p>Studios</p>
+                <h2>Three houses, one continuous calm.</h2>
+            </div>
+            <div class="home-preview__grid">
+                <article>
+                    <h3>Brand Strategy Lab</h3>
+                    <p>Immersive ethnography, positioning frameworks, and naming architectures tailored for East African founders.</p>
+                    <a href="services.html" class="home-preview__link">Discover the lab →</a>
+                </article>
+                <article>
+                    <h3>Experience Atelier</h3>
+                    <p>Motion, print, sonic, and spatial systems crafted with couture precision for physical and digital journeys.</p>
+                    <a href="services.html" class="home-preview__link">See the atelier →</a>
+                </article>
+                <article>
+                    <h3>Digital Calm Studio</h3>
+                    <p>Product design and content ecosystems that extend the brand’s breath online with graceful performance.</p>
+                    <a href="services.html" class="home-preview__link">Meet the studio →</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="home-blog-teaser block" data-animate>
+            <div class="section-heading">
+                <p>Field Notes</p>
+                <h2>Signals from the Kajnaja journal.</h2>
+            </div>
+            <div class="home-blog-teaser__grid">
+                <article>
+                    <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=900&q=80" alt="Sketching branding systems">
+                    <div>
+                        <p class="home-blog-teaser__meta">Calm Systems · 8 min read</p>
+                        <h3>Embedding scent, sound, and typography inside premium hospitality.</h3>
+                        <a href="blog-detail.html">Read the dispatch →</a>
+                    </div>
+                </article>
+                <article>
+                    <img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?auto=format&fit=crop&w=900&q=80" alt="Creative direction board">
+                    <div>
+                        <p class="home-blog-teaser__meta">Heritage Futures · 6 min read</p>
+                        <h3>Designing national initiatives that still feel intimate and human.</h3>
+                        <a href="blog-detail.html">Go to article →</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="cta block" data-animate>
+            <div>
+                <p>Call to Action</p>
+                <h2>Request the Kajnaja Prelude Deck within 24 hours.</h2>
+            </div>
+            <a class="contact-pill contact-pill--dark" href="contact.html">Access the deck</a>
+        </section>
+    </main>
+
+    <footer class="footer" data-animate>
+        <div class="footer__brand">
+            <img src="assets/images/logo.png" alt="Kajnaja Brand mark">
+            <p>Kajnaja Brand · Tanzania's Elite Branding Agency</p>
+        </div>
+        <div class="footer__links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="work.html">Work</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer__social">
+            <a href="https://www.instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+            <a href="https://www.behance.net" target="_blank" rel="noreferrer">Behance</a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+        <div class="footer__legal">
+            <span>© 2025 Kajnaja Brand Studio</span>
+            <span>Privacy · Terms</span>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

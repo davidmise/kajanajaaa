@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kajnaja Brand · Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="blue" data-page="services">
+    <div class="nav-overlay" data-nav-overlay></div>
+    <nav class="nav-drawer" data-nav-drawer>
+        <button class="nav-drawer__close" data-nav-close aria-label="Close menu">×</button>
+        <a class="nav-drawer__link" href="index.html">Home</a>
+        <a class="nav-drawer__link is-active" href="services.html">Services</a>
+        <a class="nav-drawer__link" href="about.html">About</a>
+        <a class="nav-drawer__link" href="work.html">Work</a>
+        <a class="nav-drawer__link" href="contact.html">Contact</a>
+        <a class="nav-drawer__link" href="blog.html">Blog</a>
+        <a class="nav-drawer__cta" href="contact.html">Start a project</a>
+        <button class="theme-toggle theme-toggle--drawer" type="button" data-theme-toggle aria-pressed="false"
+            aria-label="Switch to white theme">
+            <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5" />
+                    <line x1="12" y1="2" x2="12" y2="4.5" />
+                    <line x1="12" y1="19.5" x2="12" y2="22" />
+                    <line x1="4.22" y1="4.22" x2="5.9" y2="5.9" />
+                    <line x1="18.1" y1="18.1" x2="19.78" y2="19.78" />
+                    <line x1="2" y1="12" x2="4.5" y2="12" />
+                    <line x1="19.5" y1="12" x2="22" y2="12" />
+                    <line x1="4.22" y1="19.78" x2="5.9" y2="18.1" />
+                    <line x1="18.1" y1="5.9" x2="19.78" y2="4.22" />
+                </svg>
+            </span>
+            <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15.5A9 9 0 0 1 8.5 3 7.5 7.5 0 1 0 21 15.5z" />
+                </svg>
+            </span>
+        </button>
+    </nav>
+
+    <header class="nav-shell" data-animate>
+        <a class="nav-logo" href="index.html">
+            <img class="nav-logo__white" src="assets/images/kajanja brand logo-01.png" alt="Kajnaja Brand">
+            <img class="nav-logo__blue" src="assets/images/kajanja brand logo-02.png" alt="Kajnaja Brand">
+        </a>
+        <div class="nav-bar">
+            <div class="nav-bar__inner">
+                <div class="nav-tabs" role="tablist">
+                    <a class="nav-tab" href="index.html" data-nav="home" role="tab">Home</a>
+                    <a class="nav-tab" href="services.html" data-nav="services" role="tab">Services</a>
+                    <a class="nav-tab" href="about.html" data-nav="about" role="tab">About</a>
+                    <a class="nav-tab" href="work.html" data-nav="work" role="tab">Work</a>
+                    <a class="nav-tab" href="contact.html" data-nav="contact" role="tab">Contact</a>
+                    <a class="nav-tab" href="blog.html" data-nav="blog" role="tab">Blog</a>
+                </div>
+            </div>
+        </div>
+        <div class="nav-actions">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false"
+                aria-label="Switch to white theme">
+                <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5" />
+                        <line x1="12" y1="2" x2="12" y2="4.5" />
+                        <line x1="12" y1="19.5" x2="12" y2="22" />
+                        <line x1="4.22" y1="4.22" x2="5.9" y2="5.9" />
+                        <line x1="18.1" y1="18.1" x2="19.78" y2="19.78" />
+                        <line x1="2" y1="12" x2="4.5" y2="12" />
+                        <line x1="19.5" y1="12" x2="22" y2="12" />
+                        <line x1="4.22" y1="19.78" x2="5.9" y2="18.1" />
+                        <line x1="18.1" y1="5.9" x2="19.78" y2="4.22" />
+                    </svg>
+                </span>
+                <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15.5A9 9 0 0 1 8.5 3 7.5 7.5 0 1 0 21 15.5z" />
+                    </svg>
+                </span>
+            </button>
+            <a class="contact-pill" href="contact.html">Start a project</a>
+        </div>
+        <button class="nav-hamburger" data-nav-toggle aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <main>
+        <section class="page-hero block" data-animate>
+            <div class="hero__content">
+                <p class="hero__eyebrow">Services</p>
+                <h1>Brand, creative, and digital executed as one calm continuum.</h1>
+                <p>
+                    We run three integrated studios so founders do not have to juggle multiple vendors. Strategy sprints, couture design,
+                    and digital products happen in-house, sharing research pods and production rituals.
+                </p>
+                <div class="hero__cta">
+                    <a class="btn btn--primary" href="contact.html">Book an immersion</a>
+                    <a class="btn btn--ghost" href="https://kajnaja.com/deck.pdf" target="_blank" rel="noreferrer">Download deck</a>
+                </div>
+                <div class="hero__stats">
+                    <article>
+                        <h3>3</h3>
+                        <p>specialist studios operating from Dar es Salaam.</p>
+                    </article>
+                    <article>
+                        <h3>45+</h3>
+                        <p>interdisciplinary partners we activate per engagement.</p>
+                    </article>
+                    <article>
+                        <h3>360°</h3>
+                        <p>coverage from positioning to product support.</p>
+                    </article>
+                </div>
+            </div>
+            <div class="page-hero__media">
+                <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1100&q=80" alt="Design team working on boards">
+            </div>
+        </section>
+
+        <section class="services-overview block page-section" data-animate>
+            <div class="section-heading">
+                <p>Studios</p>
+                <h2>Three studios, one seamless brand experience.</h2>
+            </div>
+            <div class="services-overview__grid">
+                <article>
+                    <h3>Brand Strategy Lab</h3>
+                    <p>Immersive workshops, cultural tension maps, and future-proof positioning statements.</p>
+                    <span>Identity · Strategy · Guidelines</span>
+                </article>
+                <article>
+                    <h3>Experience Atelier</h3>
+                    <p>Graphic systems, sonic cues, motion rules, editorial design, and tactile packaging cues.</p>
+                    <span>Graphic · Visual · Media</span>
+                </article>
+                <article>
+                    <h3>Digital Calm Studio</h3>
+                    <p>UI/UX, microsites, product films, and social ecosystems that mirror the physical brand.</p>
+                    <span>Web · UI/UX · Social</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="page-section service-tiers" data-animate>
+            <div class="section-heading">
+                <p>Retainers & Launches</p>
+                <h2>Choose the cadence that fits your house.</h2>
+            </div>
+            <div class="service-tiers">
+                <article>
+                    <h3>Prelude Launch</h3>
+                    <p>Six-week sprint covering brand platform, visual identity, sonic cues, and launch-ready collateral.
+                        Perfect for product reveals or boutique hospitality openings.</p>
+                    <ul>
+                        <li>Executive immersion salon</li>
+                        <li>Naming & messaging suite</li>
+                        <li>Launch kit + content plan</li>
+                    </ul>
+                </article>
+                <article>
+                    <h3>Continuity Lab</h3>
+                    <p>Quarterly retainer with embedded strategists, art directors, and performance partners.
+                        Ideal for national programs that evolve with seasonality.</p>
+                    <ul>
+                        <li>Embedded cultural research</li>
+                        <li>Design & content production</li>
+                        <li>Experience audits + reporting</li>
+                    </ul>
+                </article>
+                <article>
+                    <h3>Signature Residency</h3>
+                    <p>Twelve-month partnership covering brand, built environment, digital product, and growth narrative.
+                        Tailored for governments and conglomerates seeking total calm.</p>
+                    <ul>
+                        <li>Dedicated studio lead</li>
+                        <li>Architectural & scent partners</li>
+                        <li>Owned + earned media orchestration</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="page-section" data-animate>
+            <div class="section-heading">
+                <p>Process</p>
+                <h2>How we choreograph momentum.</h2>
+            </div>
+            <ol class="timeline">
+                <li>
+                    <h3>Immersion Salons</h3>
+                    <p>Sensory rooms staged in Dar or Zanzibar, aligning leadership on tone, rituals, and ambition.</p>
+                </li>
+                <li>
+                    <h3>Strategy Blueprint</h3>
+                    <p>Live document housing audience rituals, messaging ladders, and experience pillars.</p>
+                </li>
+                <li>
+                    <h3>Design System Build</h3>
+                    <p>Visual, sonic, scent, and motion assets with governance for in-house and partner teams.</p>
+                </li>
+                <li>
+                    <h3>Continuity Lab</h3>
+                    <p>Embedded team monitors sentiment, optimizes touchpoints, and mentors internal squads.</p>
+                </li>
+            </ol>
+        </section>
+
+        <section class="cta block" data-animate>
+            <div>
+                <p>Next Step</p>
+                <h2>Schedule a capabilities walkthrough within 48 hours.</h2>
+            </div>
+            <a class="contact-pill contact-pill--dark" href="contact.html">Plan the session</a>
+        </section>
+    </main>
+
+    <footer class="footer" data-animate>
+        <div class="footer__brand">
+            <img src="assets/images/logo.png" alt="Kajnaja Brand mark">
+            <p>Kajnaja Brand · Tanzania's Elite Branding Agency</p>
+        </div>
+        <div class="footer__links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="work.html">Work</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer__social">
+            <a href="https://www.instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+            <a href="https://www.behance.net" target="_blank" rel="noreferrer">Behance</a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+        <div class="footer__legal">
+            <span>© 2025 Kajnaja Brand Studio</span>
+            <span>Privacy · Terms</span>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
