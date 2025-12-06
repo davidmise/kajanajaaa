@@ -74,7 +74,7 @@ filterButtons.forEach(button => {
 });
 
 // Theme toggle + persistence
-const themeToggle = document.querySelector('[data-theme-toggle]');
+const themeToggles = document.querySelectorAll('[data-theme-toggle]');
 const THEME_STORAGE_KEY = 'kajnaja-theme';
 
 const readStoredTheme = () => {
@@ -94,11 +94,12 @@ const persistTheme = value => {
 };
 
 const syncThemeControl = theme => {
-    if (!themeToggle) return;
     const isWhite = theme === 'white';
-    themeToggle.setAttribute('aria-pressed', String(isWhite));
-    const nextThemeLabel = isWhite ? 'Switch to blue theme' : 'Switch to white theme';
-    themeToggle.setAttribute('aria-label', nextThemeLabel);
+    themeToggles.forEach(toggle => {
+        toggle.setAttribute('aria-pressed', String(isWhite));
+        const nextThemeLabel = isWhite ? 'Switch to blue theme' : 'Switch to white theme';
+        toggle.setAttribute('aria-label', nextThemeLabel);
+    });
 };
 
 const setTheme = theme => {
@@ -111,9 +112,11 @@ const setTheme = theme => {
 const storedTheme = readStoredTheme();
 setTheme(storedTheme || document.body.getAttribute('data-theme') || 'blue');
 
-themeToggle?.addEventListener('click', () => {
-    const nextTheme = document.body.getAttribute('data-theme') === 'white' ? 'blue' : 'white';
-    setTheme(nextTheme);
+themeToggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+        const nextTheme = document.body.getAttribute('data-theme') === 'white' ? 'blue' : 'white';
+        setTheme(nextTheme);
+    });
 });
 
 // Testimonial carousel
@@ -215,4 +218,116 @@ if (testimonialCarousel) {
         createDots();
         goToSlide(0);
     });
+}
+
+// Case study carousel + filters
+const caseCarousel = document.querySelector('[data-case-carousel]');
+if (caseCarousel) {
+    const track = caseCarousel.querySelector('[data-case-track]');
+    const viewport = caseCarousel.querySelector('[data-case-viewport]');
+    const prevBtn = caseCarousel.querySelector('[data-case-prev]');
+    const nextBtn = caseCarousel.querySelector('[data-case-next]');
+    const dotsContainer = caseCarousel.querySelector('[data-case-dots]');
+    const filterButtons = document.querySelectorAll('[data-case-filter]');
+
+    if (!track || !viewport) {
+        console.warn('Case carousel: missing track or viewport');
+    } else {
+        const allCards = Array.from(track.children);
+        let filteredCards = [...allCards];
+        let cardsPerView = 1;
+        let currentSlide = 0;
+
+        const updateCardsPerView = () => {
+            const width = window.innerWidth;
+            if (width >= 1100) cardsPerView = 3;
+            else if (width >= 768) cardsPerView = 2;
+            else cardsPerView = 1;
+        };
+
+        const mountCards = () => {
+            track.innerHTML = '';
+            filteredCards.forEach(card => track.appendChild(card));
+        };
+
+        const getTotalSlides = () => {
+            if (!filteredCards.length) return 1;
+            return Math.ceil(filteredCards.length / cardsPerView);
+        };
+
+        const updateButtons = () => {
+            const totalSlides = getTotalSlides();
+            const atStart = currentSlide === 0;
+            const atEnd = currentSlide >= totalSlides - 1;
+            prevBtn?.toggleAttribute('disabled', atStart);
+            nextBtn?.toggleAttribute('disabled', atEnd);
+        };
+
+        const updateDots = () => {
+            const dots = dotsContainer?.querySelectorAll('.case-carousel__dot');
+            dots?.forEach((dot, index) => {
+                dot.classList.toggle('is-active', index === currentSlide);
+            });
+        };
+
+        const goToSlide = index => {
+            const totalSlides = getTotalSlides();
+            currentSlide = Math.max(0, Math.min(index, totalSlides - 1));
+            const viewportWidth = viewport?.offsetWidth || 0;
+            track.style.transform = `translateX(-${currentSlide * viewportWidth}px)`;
+            updateDots();
+            updateButtons();
+        };
+
+        const createDots = () => {
+            if (!dotsContainer) return;
+            dotsContainer.innerHTML = '';
+            const totalSlides = getTotalSlides();
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('button');
+                dot.type = 'button';
+                dot.classList.add('case-carousel__dot');
+                if (i === currentSlide) dot.classList.add('is-active');
+                dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+            }
+        };
+
+        const applyFilter = filter => {
+            const nextFilter = filter || 'all';
+            filteredCards = allCards.filter(card => {
+                if (nextFilter === 'all') return true;
+                return card.dataset.caseCategory === nextFilter;
+            });
+            mountCards();
+            currentSlide = 0;
+            updateCardsPerView();
+            createDots();
+            goToSlide(0);
+        };
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('is-active'));
+                button.classList.add('is-active');
+                applyFilter(button.dataset.caseFilter);
+            });
+        });
+
+        prevBtn?.addEventListener('click', () => goToSlide(currentSlide - 1));
+        nextBtn?.addEventListener('click', () => goToSlide(currentSlide + 1));
+
+        window.addEventListener('resize', () => {
+            updateCardsPerView();
+            createDots();
+            goToSlide(currentSlide);
+        });
+
+        // Initialize gallery
+        updateCardsPerView();
+        createDots();
+        goToSlide(0);
+        updateButtons();
+    }
 }

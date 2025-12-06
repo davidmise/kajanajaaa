@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kajnaja Brand · Work</title>
+    <title>Kajnaja Brand · Project Detail</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
@@ -101,78 +101,140 @@
     <main>
         <section class="page-hero block" data-animate>
             <div class="hero__content">
-                <p class="hero__eyebrow">Work</p>
-                <h1>Launches and residencies across hospitality, tech, and national programs.</h1>
-                <p>Every engagement layers research, craft, and continuity. Explore select commissions below or request the full case library.</p>
+                <p class="hero__eyebrow">Project Detail</p>
+                <h1 id="kilimanjaro">Kilimanjaro Aerie · Serengeti Reserve continuum.</h1>
+                <p>Altitude-inspired hospitality system linking safari suites, aviation lounges, and private tasting rooms. We built a
+                    chromed crest suite, sonic palette, and meditative signage that travel from Msasani to the crater rim.</p>
                 <div class="hero__cta">
                     <a class="btn btn--primary" href="contact.html">Request case library</a>
-                    <a class="btn btn--ghost" href="https://www.behance.net" target="_blank" rel="noreferrer">Behance portfolio</a>
+                    <a class="btn btn--ghost" href="#gallery">Browse gallery</a>
                 </div>
             </div>
             <div class="page-hero__media">
-                <img src="https://images.pexels.com/photos/1181421/pexels-photo-1181421.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Hospitality lobby">
+                <img src="https://images.pexels.com/photos/1181418/pexels-photo-1181418.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Luxury hospitality suite">
             </div>
         </section>
 
         <section class="page-section" data-animate>
             <div class="section-heading">
-                <p>Featured</p>
-                <h2>Serengeti Reserve · Coastal altitude narrative.</h2>
+                <p>Scope</p>
+                <h2>What we delivered for the residency.</h2>
             </div>
-            <div class="case-card">
-                <img src="https://images.pexels.com/photos/1181418/pexels-photo-1181418.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Serengeti Reserve interior">
-                <div class="case-card__body">
-                    <p>Flagship hospitality identity that slips from sunrise safaris to moonlit degustation dinners. We layered
-                        ocean gradients, reflective chrome typography, bespoke Kiswahili poetry, and sonic cues.</p>
-                    <ul>
-                        <li>Naming + crest suite</li>
-                        <li>Immersive tasting room projections</li>
-                        <li>Responsive digital concierge</li>
-                    </ul>
-                    <a href="contact.html">Request full case study →</a>
-                </div>
+            <div class="page-section__grid">
+                <article>
+                    <h3>Brand platform</h3>
+                    <p>Naming architecture, Kiswahili poetry system, tone ladders, and sonic cues for every guests' touchpoint.</p>
+                </article>
+                <article>
+                    <h3>Experience</h3>
+                    <p>Projection-mapped tasting rooms, reflective chrome monograms, bespoke keycards, and aroma rituals.</p>
+                </article>
+                <article>
+                    <h3>Digital calm</h3>
+                    <p>Responsive concierge, cinematic product films, and investor microsites synced with on-property lighting.</p>
+                </article>
             </div>
         </section>
 
-        <section class="page-section" data-animate>
+        <section class="page-section" id="gallery" data-case-wrapper data-animate>
             <div class="section-heading">
                 <p>Selected Projects</p>
                 <h2>Gallery with filters and rapid case notes.</h2>
             </div>
+            <div class="case-filters">
+                <button type="button" class="is-active" data-case-filter="all">All</button>
+                <button type="button" data-case-filter="hospitality">Hospitality</button>
+                <button type="button" data-case-filter="tech">Tech</button>
+                <button type="button" data-case-filter="culture">Culture</button>
+            </div>
+            <div class="case-carousel" data-case-carousel>
+                <div class="case-carousel__viewport" data-case-viewport>
+                    <div class="case-carousel__track" data-case-track>
+                        <article class="case-card" data-case-category="hospitality">
+                            <img src="https://images.pexels.com/photos/1181425/pexels-photo-1181425.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Executive boardroom session">
+                            <div class="case-card__body">
+                                <h3>Kilimanjaro Aerie</h3>
+                                <p>Altitude hospitality identity with reflective glyphs and meditative signage. See summary →</p>
+                                <a href="contact.html">See summary →</a>
+                            </div>
+                        </article>
+                        <article class="case-card" data-case-category="tech">
+                            <img src="https://images.pexels.com/photos/1181361/pexels-photo-1181361.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Tech founders collaborating">
+                            <div class="case-card__body">
+                                <h3>Swahili Tech Week</h3>
+                                <p>Generative typography, broadcast-ready content engine, and live product control rooms.</p>
+                                <a href="contact.html">See summary →</a>
+                            </div>
+                        </article>
+                        <article class="case-card" data-case-category="culture">
+                            <img src="https://images.pexels.com/photos/1181357/pexels-photo-1181357.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Retail perfume experience">
+                            <div class="case-card__body">
+                                <h3>Nyika Atelier</h3>
+                                <p>Fragrance launch with foil packaging, ritual films, and artist residencies in Stone Town.</p>
+                                <a href="contact.html">See summary →</a>
+                            </div>
+                        </article>
+                        <article class="case-card" data-case-category="hospitality">
+                            <img src="https://images.pexels.com/photos/1181421/pexels-photo-1181421.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Coastal hospitality meeting">
+                            <div class="case-card__body">
+                                <h3>Zanzibar Tide Club</h3>
+                                <p>Private coastal club narrative with tactile invitations, chrome monograms, and lounge film.</p>
+                                <a href="contact.html">See summary →</a>
+                            </div>
+                        </article>
+                        <article class="case-card" data-case-category="tech">
+                            <img src="https://images.pexels.com/photos/1181421/pexels-photo-1181421.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Mobility concepts">
+                            <div class="case-card__body">
+                                <h3>Coastal Mobility Lab</h3>
+                                <p>E-mobility launch kit with commuter app, ferry livery, and live experience dashboard.</p>
+                                <a href="contact.html">See summary →</a>
+                            </div>
+                        </article>
+                        <article class="case-card" data-case-category="culture">
+                            <img src="https://images.pexels.com/photos/28739705/pexels-photo-28739705.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Zanzibar cultural shoot">
+                            <div class="case-card__body">
+                                <h3>Isles Culture Festival</h3>
+                                <p>Festival identity, site choreography, and tactile invites soaked in Swahili heritage.</p>
+                                <a href="contact.html">See summary →</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="case-carousel__controls">
+                    <button class="case-carousel__button" type="button" data-case-prev aria-label="Previous projects">←</button>
+                    <button class="case-carousel__button" type="button" data-case-next aria-label="Next projects">→</button>
+                </div>
+                <div class="case-carousel__dots" data-case-dots></div>
+            </div>
+        </section>
+
+        <section class="page-section" data-animate>
+            <div class="section-heading">
+                <p>Impact</p>
+                <h2>What shifted after launch.</h2>
+            </div>
             <div class="work-grid">
                 <article>
-                    <img src="https://images.pexels.com/photos/1181425/pexels-photo-1181425.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Luxury portrait">
-                    <h3>Kilimanjaro Aerie</h3>
-                    <p>Altitude-inspired hospitality identity with reflective chrome glyphs and meditative signage.</p>
-                    <a href="project-detail.html">See summary →</a>
+                    <h3>+34% ADR uplift</h3>
+                    <p>Premium suite occupancy increased after scent + sonic cues rolled out across villas.</p>
                 </article>
                 <article>
-                    <img src="https://images.pexels.com/photos/1181361/pexels-photo-1181361.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Tech studio">
-                    <h3>Swahili Tech Week</h3>
-                    <p>Modular typography, generative visuals, and broadcast-ready content engine.</p>
-                    <a href="project-detail.html">See summary →</a>
+                    <h3>Residency renewal</h3>
+                    <p>Client extended for three-year continuity lab covering mobility, aviation, and press.</p>
                 </article>
                 <article>
-                    <img src="https://images.pexels.com/photos/1181357/pexels-photo-1181357.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Boutique retail">
-                    <h3>Nyika Atelier</h3>
-                    <p>Fragrance house launch with foil packaging, scent ritual videos, and artist residencies.</p>
-                    <a href="project-detail.html">See summary →</a>
-                </article>
-                <article>
-                    <img src="https://images.pexels.com/photos/1181421/pexels-photo-1181421.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Beach resort">
-                    <h3>Zanzibar Tide Club</h3>
-                    <p>Private coastal members club narrative with tactile invitations and chrome monograms.</p>
-                    <a href="project-detail.html">See summary →</a>
+                    <h3>Global press kit</h3>
+                    <p>CN Traveler and Design Anthology features secured within six weeks of unveil.</p>
                 </article>
             </div>
         </section>
 
         <section class="cta block" data-animate>
             <div>
-                <p>Collaborate</p>
-                <h2>Share your brief for a curated case presentation.</h2>
+                <p>Next Project</p>
+                <h2>Ready for a curated case walkthrough? The studio concierge will arrange it within 48 hours.</h2>
             </div>
-            <a class="contact-pill contact-pill--dark" href="contact.html">Start the conversation</a>
+            <a class="contact-pill contact-pill--dark" href="contact.html">Book a preview</a>
         </section>
     </main>
 
